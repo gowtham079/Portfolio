@@ -1,0 +1,11 @@
+{
+  "name": "hemanth-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Hemanth S - MCA Student & Data Analyst",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "author": "Hemanth S",
+  "license": "ISC"
+}

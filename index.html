@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Hemanth S | MCA & Data Analyst Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap 5 Framework -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20261021_modal_fix" />
+  <style>
+    /* Strict Dark IDE Modal Theme - Prevents Bootstrap Light Mode Overrides */
+    .modal {
+      --bs-modal-bg: #232428 !important;
+      --bs-modal-color: #e4e4e7 !important;
+      --bs-modal-border-color: #2d2e32 !important;
+      --bs-modal-header-border-color: #2d2e32 !important;
+      --bs-modal-footer-border-color: #2d2e32 !important;
+    }
+
+    .modal-content,
+    .modal-content.ide-modal {
+      background-color: #232428 !important;
+      background: #232428 !important;
+      color: #e4e4e7 !important;
+      border: 1px solid #2d2e32 !important;
+      border-radius: 12px !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85) !important;
+    }
+
+    .modal-header,
+    .modal-header.ide-modal-header {
+      background-color: #121316 !important;
+      background: #121316 !important;
+      border-bottom: 1px solid #2d2e32 !important;
+      padding: 16px 20px !important;
+      color: #e4e4e7 !important;
+    }
+
+    .modal-title,
+    .modal-title.ide-modal-title {
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 1.05rem !important;
+      color: #a78bfa !important;
+      font-weight: 600 !important;
+    }
+
+    .modal-body,
+    .modal-body.ide-modal-body {
+      padding: 22px 20px !important;
+      font-size: 0.92rem !important;
+      line-height: 1.65 !important;
+      background-color: #232428 !important;
+      background: #232428 !important;
+      color: #d1d5db !important;
+    }
+
+    .modal-body p {
+      color: #d1d5db !important;
+      font-size: 0.92rem !important;
+      line-height: 1.65 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .modal-body .contribution-list {
+      padding-left: 0 !important;
+      list-style: none !important;
+      margin-bottom: 16px !important;
+    }
+
+    .modal-body .contribution-list li {
+      position: relative !important;
+      padding-left: 18px !important;
+      margin-bottom: 8px !important;
+      color: #e4e4e7 !important;
+      font-size: 0.88rem !important;
+      line-height: 1.55 !important;
+    }
+
+    .modal-body .contribution-list li::before {
+      content: "▹" !important;
+      position: absolute !important;
+      left: 0 !important;
+      color: #a78bfa !important;
+      font-weight: bold !important;
+    }
+
+    .modal-footer,
+    .modal-footer.ide-modal-footer {
+      border-top: 1px solid #2d2e32 !important;
+      padding: 14px 20px !important;
+      background-color: #16171a !important;
+      background: #16171a !important;
+      color: #e4e4e7 !important;
+    }
+
+    .modal-section-title {
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 0.85rem !important;
+      color: #34d399 !important;
+      margin-top: 20px !important;
+      margin-bottom: 10px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.03em !important;
+    }
+
+    .modal-tech-table {
+      width: 100% !important;
+      margin-bottom: 20px !important;
+      border-collapse: collapse !important;
+    }
+
+    .modal-tech-table td {
+      padding: 8px 10px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      font-size: 0.85rem !important;
+      vertical-align: middle !important;
+    }
+
+    .modal-tech-table td.tech-role {
+      font-family: 'JetBrains Mono', monospace !important;
+      color: #a1a1aa !important;
+      width: 32% !important;
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+    }
+
+    .modal-tech-table td.tech-items {
+      color: #e4e4e7 !important;
+    }
+
+    .domain-tag {
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 11px !important;
+      color: #a1a1aa !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid #2d2e32 !important;
+      padding: 3px 8px !important;
+      border-radius: 4px !important;
+      display: inline-block !important;
+    }
+
+    .btn-close-white {
+      filter: invert(1) grayscale(100%) brightness(200%) !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- Left sidebar navigation -->
+    <nav class="sidebar">
+      <a href="#home" class="nav-link active" data-section="home">
+        <span class="nav-icon">⌂</span>
+        <span>home</span>
+      </a>
+      <a href="#works" class="nav-link" data-section="works">
+        <span class="nav-icon">◉</span>
+        <span>works</span>
+      </a>
+      <a href="#about-me" class="nav-link" data-section="about-me">
+        <span class="nav-icon">◐</span>
+        <span>about-me</span>
+      </a>
+      <a href="#contacts" class="nav-link" data-section="contacts">
+        <span class="nav-icon">✉</span>
+        <span>contacts</span>
+      </a>
+    </nav>
+
+    <main class="content">
+      <!-- Home / Hero -->
+      <section id="home" class="section active">
+        <div class="hero">
+          <div class="hero-visual animate-in" style="--delay:0.15s">
+            <div class="profile-frame">
+              <img src="assets/my-photo.png" alt="Hemanth S" class="profile-img" id="profile-img"
+                onerror="this.onerror=null;this.src='assets/my%20photo.png';" />
+              <div class="profile-glow"></div>
+            </div>
+          </div>
+          <div class="hero-text">
+            <div class="greeting animate-in" style="--delay:0.2s">
+              <span class="greeting-line">Hello, World! 👋</span>
+            </div>
+            <h1 class="animate-in" style="--delay:0.3s">Hemanth S is a <span class="accent typed-text">Data
+                Analyst.</span><span class="cursor-blink">|</span></h1>
+            <p class="tagline animate-in" style="--delay:0.4s">I'm an MCA student focused on Data Analytics and Python,
+              with hands-on experience building projects involving football data, machine learning, and intelligent
+              systems. I enjoy transforming raw data into structured information, exploring patterns, and building
+              practical solutions to real-world problems. I'm continuously developing my skills in SQL, Excel, Python,
+              and Power BI while building projects that demonstrate my analytical and technical abilities.</p>
+            <p class="quote animate-in" style="--delay:0.5s">// With great power comes great electricity bill.</p>
+          </div>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="stats-strip animate-in" style="--delay:0.65s">
+          <a href="#works" data-nav="works" class="stat-item stat-link" title="Navigate to Works / Projects">
+            <span class="stat-num" data-target="3" data-suffix="+">3+</span>
+            <span class="stat-label">Projects</span>
+          </a>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="9.47" data-suffix="" data-decimal="true">8.13</span>
+            <span class="stat-label">CGPA</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="12" data-suffix="+">12+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-divider"></div>
+          <a href="#about-me" data-nav="about-me" class="stat-item stat-link"
+            title="Navigate to Experience in About Me">
+            <span class="stat-num" data-target="2" data-suffix="">2</span>
+            <span class="stat-label">Internship</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Projects / Works -->
+      <section id="works" class="section">
+        <div class="section-header">
+          <h2 class="section-title">/ works</h2>
+          <div class="section-line"></div>
+        </div>
+        <p class="section-desc">Production-grade applications and intelligent systems featuring football data analytics,
+          deep learning computer vision, and multi-agent simulation architectures — all deployed with open repositories.
+        </p>
+
+        <!-- Flagship Production Projects -->
+        <div class="projects-category">
+          <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+            <h3 class="mb-0"><span class="cat-bracket">[</span> flagship-production-projects <span
+                class="cat-bracket">]</span></h3>
+            <span class="badge-count">3 Live Deployments</span>
+          </div>
+
+          <div class="row g-4">
+            <!-- Project 1: ScoutIQ -->
+            <div class="col-12 col-lg-6 col-xl-4 d-flex">
+              <article class="project-card flex-fill d-flex flex-column" data-index="0">
+                <div class="project-thumb project-thumb-football">
+                  <div class="thumb-top-badges">
+                    <span class="live-status-pill"><span class="status-pulse green"></span> Live on Vercel</span>
+                  </div>
+                  <div class="thumb-icon-large">⚽</div>
+                  <div class="thumb-bg"></div>
+                  <span class="thumb-label">ScoutIQ Platform</span>
+                </div>
+                <div class="project-body d-flex flex-column flex-fill">
+                  <div class="project-title-row">
+                    <h4 class="project-title">ScoutIQ</h4>
+                    <span class="project-type-badge">Football Data Analytics</span>
+                  </div>
+                  <p class="project-desc">A football data analytics platform that retrieves data through the Sportmonks
+                    Football API and supports structured data ingestion and analysis of teams, players, fixtures, and
+                    match performance with automated pipelines.</p>
+
+                  <div class="project-contributions-preview">
+                    <div class="contribution-heading">Key Contributions:</div>
+                    <ul class="contribution-list">
+                      <li>Developed a Python API client with authentication, rate limiting, and robust error handling
+                      </li>
+                      <li>Implemented automated data ingestion for league, season, team, and fixture information</li>
+                      <li>Structured raw JSON data into relational tables and implemented MySQL database utilities</li>
+                      <li>Performed exploratory data transformation and metric analysis using Pandas and NumPy</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-tech-categorized">
+                    <span class="tech-cat-label">Stack:</span>
+                    <div class="project-tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">Sportmonks API</span>
+                      <span class="tag">Pandas</span>
+                      <span class="tag">NumPy</span>
+                      <span class="tag">MySQL</span>
+                      <span class="tag">REST API</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions mt-auto pt-3">
+                    <div class="project-actions-row">
+                      <a href="https://scout-iq-smoky.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="btn-action-live" title="View live deployed application">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2">
+                          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                        </svg>
+                        <span>Live Demo</span>
+                      </a>
+                      <a href="https://github.com/gowtham079/Scout-IQ.git" target="_blank" rel="noopener noreferrer"
+                        class="btn-action-git" title="View source code on GitHub">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <path
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
+                        <span>Code</span>
+                      </a>
+                    </div>
+                    <button type="button" class="btn btn-action-details" data-bs-toggle="modal"
+                      data-bs-target="#modal-scoutiq" title="View Architecture & Full Contributions">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                      </svg>
+                      <span>Architecture & Contributions</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Project 2: Skin Disease Detection -->
+            <div class="col-12 col-lg-6 col-xl-4 d-flex">
+              <article class="project-card flex-fill d-flex flex-column" data-index="1">
+                <div class="project-thumb project-thumb-med">
+                  <div class="thumb-top-badges">
+                    <span class="live-status-pill"><span class="status-pulse green"></span> Live on Render</span>
+                  </div>
+                  <div class="thumb-icon-large">🩺</div>
+                  <div class="thumb-bg"></div>
+                  <span class="thumb-label">Skin Disease Detection</span>
+                </div>
+                <div class="project-body d-flex flex-column flex-fill">
+                  <div class="project-title-row">
+                    <h4 class="project-title">Skin Disease Detection</h4>
+                    <span class="project-type-badge">Computer Vision AI</span>
+                  </div>
+                  <div class="prototype-pill">
+                    <span class="pill-dot"></span> Educational prototype only; not intended for medical diagnosis.
+                  </div>
+                  <p class="project-desc">A deep-learning image-classification application built using TensorFlow and
+                    MobileNet to classify complex skin conditions from user-uploaded images into disease categories for
+                    educational screening assistance.</p>
+
+                  <div class="project-contributions-preview">
+                    <div class="contribution-heading">Key Contributions:</div>
+                    <ul class="contribution-list">
+                      <li>Trained and fine-tuned MobileNet architecture using TensorFlow for image classification</li>
+                      <li>Built image preprocessing pipeline (resizing, scaling, normalization) for model inference</li>
+                      <li>Integrated deep learning model into a lightweight Python web interface for user image uploads
+                      </li>
+                      <li>Implemented multi-class classification prediction mapping and confidence reporting</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-tech-categorized">
+                    <span class="tech-cat-label">Stack:</span>
+                    <div class="project-tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">TensorFlow</span>
+                      <span class="tag">MobileNet</span>
+                      <span class="tag">Computer Vision</span>
+                      <span class="tag">Deep Learning</span>
+                      <span class="tag">Flask</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions mt-auto pt-3">
+                    <div class="project-actions-row">
+                      <a href="https://skin-scan-rq98.onrender.com/" target="_blank" rel="noopener noreferrer"
+                        class="btn-action-live" title="View live deployed application">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2">
+                          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                        </svg>
+                        <span>Live Demo</span>
+                      </a>
+                      <a href="https://github.com/gowtham079/skin-scan.git" target="_blank" rel="noopener noreferrer"
+                        class="btn-action-git" title="View source code on GitHub">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <path
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
+                        <span>Code</span>
+                      </a>
+                    </div>
+                    <button type="button" class="btn btn-action-details" data-bs-toggle="modal"
+                      data-bs-target="#modal-skin" title="View Architecture & Full Contributions">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                      </svg>
+                      <span>Architecture & Contributions</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Project 3: Multi-Agent Disaster Management Simulator -->
+            <div class="col-12 col-lg-12 col-xl-4 d-flex">
+              <article class="project-card flex-fill d-flex flex-column" data-index="2">
+                <div class="project-thumb project-thumb-ai">
+                  <div class="thumb-top-badges">
+                    <span class="live-status-pill"><span class="status-pulse green"></span> Live on Vercel</span>
+                  </div>
+                  <div class="thumb-icon-large">🚨</div>
+                  <div class="thumb-bg"></div>
+                  <span class="thumb-label">Disaster-OS Simulator</span>
+                </div>
+                <div class="project-body d-flex flex-column flex-fill">
+                  <div class="project-title-row">
+                    <h4 class="project-title">Disaster-OS</h4>
+                    <span class="project-type-badge">Multi-Agent Sim</span>
+                  </div>
+                  <p class="project-desc">A multi-agent disaster response simulation system modeling incident detection,
+                    resource allocation, and agent coordination, equipped with simulation state tracking and evaluation
+                    metrics via FastAPI.</p>
+
+                  <div class="project-contributions-preview">
+                    <div class="contribution-heading">Key Contributions:</div>
+                    <ul class="contribution-list">
+                      <li>Engineered state management system to track real-time agent workflow and simulation states
+                      </li>
+                      <li>Implemented structured event logging and incident data storage using SQLite</li>
+                      <li>Developed evaluation logic benchmarking detection accuracy, detection time, and false-positive
+                        rates</li>
+                      <li>Built REST API integration using FastAPI for simulation control and metrics reporting</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-tech-categorized">
+                    <span class="tech-cat-label">Stack:</span>
+                    <div class="project-tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">FastAPI</span>
+                      <span class="tag">SQLite</span>
+                      <span class="tag">Pandas</span>
+                      <span class="tag">NumPy</span>
+                      <span class="tag">Scikit-learn</span>
+                    </div>
+                  </div>
+
+                  <div class="project-actions mt-auto pt-3">
+                    <div class="project-actions-row">
+                      <a href="https://disasterosmultiagentproject.vercel.app/" target="_blank"
+                        rel="noopener noreferrer" class="btn-action-live" title="View live deployed application">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2">
+                          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                        </svg>
+                        <span>Live Demo</span>
+                      </a>
+                      <a href="https://github.com/gowtham079/Disaster-OS.git" target="_blank" rel="noopener noreferrer"
+                        class="btn-action-git" title="View source code on GitHub">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <path
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
+                        <span>Code</span>
+                      </a>
+                    </div>
+                    <button type="button" class="btn btn-action-details" data-bs-toggle="modal"
+                      data-bs-target="#modal-disaster" title="View Architecture & Full Contributions">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                      </svg>
+                      <span>Architecture & Contributions</span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic & Foundations Projects -->
+        <div class="projects-category academic-category mt-5">
+          <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+            <h3 class="mb-0"><span class="cat-bracket">[</span> academic-coursework <span class="cat-bracket">]</span>
+            </h3>
+            <span class="badge-count">Coursework & Foundations</span>
+          </div>
+          <p class="section-desc mb-3" style="font-size: 0.88rem;">Academic foundation projects demonstrating core
+            database modeling, applied scripting, and machine learning fundamentals.</p>
+          <div class="project-grid">
+            <article class="project-card" data-index="3">
+              <div class="project-thumb">
+                <div class="thumb-icon">📝</div>
+                <div class="thumb-bg"></div>
+                <span class="thumb-label">Online Quiz</span>
+              </div>
+              <div class="project-body">
+                <h4>Online Quiz System with Login (PHP & MySQL)</h4>
+                <p>Login-based online quiz app with authentication, quiz creation, question management, answer
+                  submission, result calculation, and secure MySQL storage.</p>
+                <div class="project-tags">
+                  <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML5</span><span
+                    class="tag">CSS3</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/gowtham079" target="_blank" rel="noopener noreferrer"
+                    class="btn-ghost">GitHub <span class="arrow">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-index="4">
+              <div class="project-thumb">
+                <div class="thumb-icon">🏭</div>
+                <div class="thumb-bg"></div>
+                <span class="thumb-label">ML IoT</span>
+              </div>
+              <div class="project-body">
+                <h4>ML-Based Distributed Fault Diagnosis for Industrial IoT</h4>
+                <p>Distributed fault diagnosis system using ML for scalability and detection quality in Industrial IoT;
+                  fault classification and anomaly detection.</p>
+                <div class="project-tags">
+                  <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span
+                    class="tag">Scikit-learn</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <p class="github-note">⚡ All 3 flagship projects have active live deployments on <strong>Vercel</strong> and
+          <strong>Render</strong>. View live demos or explore the open-source code on <a
+            href="https://github.com/gowtham079" target="_blank" rel="noopener noreferrer">GitHub</a>!
+        </p>
+      </section>
+
+      <!-- About Me -->
+      <section id="about-me" class="section">
+        <div class="section-header">
+          <h2 class="section-title">/ about-me</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-content">
+          <p class="about-bio">I'm <strong>Hemanth S</strong> from Mysuru, India, an MCA Graduate with a background in
+            computer applications and a strong interest in Data Analytics, Python, and practical software development.
+            Through academic projects and internship experience, I've worked with data processing, APIs, databases,
+            machine learning workflows, and backend applications. I'm looking for opportunities where I can apply my
+            technical skills, continue learning, and contribute to solving real-world problems.</p>
+
+          <!-- Separate Experience Section -->
+          <div class="experience-timeline mb-4">
+            <h3 id="experience"># experience</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot accent-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">March 16 – July 16, 2026</span>
+                  <h4>Data Architect Intern — Chiac ASI (Panchasutra Ltd)</h4>
+                  <span class="timeline-program">Advanced Superintelligence Systems R&D Internship Program</span>
+                  <p class="timeline-desc">Contributed to multi-agent AI systems: worked on state management and
+                    structured logging mechanisms to track agent interactions and workflow execution; designed
+                    structured data flows for AI/ML pipelines, incident data storage, and evaluation metrics for the
+                    multi-agent disaster management simulator.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">Mar – Apr 2024</span>
+                  <h4>Python with ML Intern — YES Techies</h4>
+                  <span class="timeline-program">Technical Internship</span>
+                  <p class="timeline-desc">Practised Python development, data handling, and machine learning
+                    fundamentals; developed scripts for dataset cleaning, feature preparation, and baseline model
+                    evaluation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Separate Education Section -->
+          <div class="education-timeline">
+            <h3 id="education"># education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2024 – 2026</span>
+                  <h4>Master of Computer Applications (MCA) — Maharaja Institute of Technology</h4>
+                  <span class="timeline-grade">CGPA: 9.47</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2021 – 2024</span>
+                  <h4>Bachelor of Computer Applications (BCA) — Vidhya Vikas First Grade College</h4>
+                  <span class="timeline-grade">Score: 7.5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills section prioritized for Data Analytics -->
+          <div id="skills" class="skills-block">
+            <h3># skills</h3>
+            <div class="skills-grid">
+              <div class="skill-group">
+                <h4>Data Analytics</h4>
+                <div class="skill-pills">
+                  <span class="pill">SQL</span>
+                  <span class="pill">Pandas</span>
+                  <span class="pill">NumPy</span>
+                  <span class="pill">Excel</span>
+                  <span class="pill">Data Cleaning</span>
+                  <span class="pill">Reporting & Analysis</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Programming</h4>
+                <div class="skill-pills">
+                  <span class="pill">Python</span>
+                  <span class="pill">SQL</span>
+                  <span class="pill">PHP</span>
+                  <span class="pill">HTML5</span>
+                  <span class="pill">CSS3</span>
+
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Databases & Data Handling</h4>
+                <div class="skill-pills">
+                  <span class="pill">MySQL</span>
+                  <span class="pill">SQLite</span>
+                  <span class="pill">Data Ingestion</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Backend & APIs</h4>
+                <div class="skill-pills">
+                  <span class="pill">FastAPI</span>
+                  <span class="pill">Flask</span>
+                  <span class="pill">REST APIs</span>
+                  <span class="pill">Requests</span>
+                  <span class="pill">Sportmonks API</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Machine Learning</h4>
+                <div class="skill-pills">
+                  <span class="pill">TensorFlow</span>
+                  <span class="pill">MobileNet</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Tools & Deployment</h4>
+                <div class="skill-pills">
+                  <span class="pill">Git</span>
+                  <span class="pill">GitHub</span>
+                  <span class="pill">VS Code</span>
+                  <span class="pill">Jupyter Notebook</span>
+                  <span class="pill">Vercel</span>
+                  <span class="pill">Render</span>
+                </div>
+              </div>
+              <div class="skill-group full-width">
+                <h4>Currently Learning 🚀</h4>
+                <div class="skill-pills">
+                  <span class="pill learning">Power BI</span>
+                  <span class="pill learning">Agentic AI</span>
+                  <span class="pill learning">Multi-Agent Systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="my-fun-facts" class="fun-facts">
+            <h3># my-fun-facts</h3>
+            <ul>
+              <li>I enjoy transforming raw, messy datasets into structured and interpretable tables.</li>
+              <li>I love exploring backend data workflows and experimenting with intelligent systems.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacts -->
+      <section id="contacts" class="section">
+        <div class="section-header">
+          <h2 class="section-title">/ contacts</h2>
+          <div class="section-line"></div>
+        </div>
+        <p class="section-desc">I'm open to entry-level Data Analyst opportunities and relevant collaborations. If you'd
+          like to discuss my projects or experience, feel free to get in touch.</p>
+        <div class="contacts-layout">
+          <div class="contact-form-block">
+            <h3 id="message-me-here"># message-me-here</h3>
+            <div id="contact-status" class="contact-status d-none" role="alert" aria-live="polite"></div>
+            <form class="contact-form" id="contact-form">
+              <div class="input-wrap">
+                <input type="text" name="name" placeholder="Name" required aria-label="Your Name" />
+                <span class="input-line"></span>
+              </div>
+              <div class="input-wrap">
+                <input type="email" name="email" placeholder="Email" required aria-label="Your Email" />
+                <span class="input-line"></span>
+              </div>
+              <div class="input-wrap">
+                <textarea name="message" placeholder="Message" rows="4" required aria-label="Your Message"></textarea>
+                <span class="input-line"></span>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span>Send Message</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <h3 id="reach-me-out"># reach-me-out</h3>
+
+            <div id="all-media" class="social-row contact-socials">
+              <a href="https://github.com/gowtham079" target="_blank" rel="noopener noreferrer" class="social-link"
+                title="GitHub" aria-label="GitHub Profile">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/hemanth-s1919" target="_blank" rel="noopener noreferrer"
+                class="social-link" title="LinkedIn" aria-label="LinkedIn Profile">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+                LinkedIn
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hemanth.s.mca@gmail.com" target="_blank"
+                rel="noopener noreferrer" class="social-link" title="Email (hemanth.s.mca@gmail.com)"
+                aria-label="Send Email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Email
+              </a>
+              <a href="tel:+916363244248" class="social-link" title="Phone" aria-label="Phone Call">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                Call
+              </a>
+              <a href="https://wa.me/916363244248" target="_blank" rel="noopener noreferrer" class="social-link"
+                title="WhatsApp" aria-label="WhatsApp Message">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.04 8.04 0 01-1.24-4.28c0-4.46 3.63-8.09 8.09-8.09 2.16 0 4.19.84 5.72 2.37a8.04 8.04 0 012.37 5.72c0 4.46-3.63 8.09-8.15 8.09zm4.44-6.07c-.24-.12-1.44-.71-1.66-.79-.22-.09-.39-.12-.55.12-.17.24-.63.79-.78.96-.14.17-.29.19-.53.07-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.29.36-.43.12-.15.17-.24.25-.41.08-.17.04-.31-.02-.43s-.55-1.33-.76-1.82c-.2-.48-.41-.41-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.22.24-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.19 3.7.59.25 1.04.41 1.4.52.59.19 1.13.16 1.56.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z" />
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+            <p class="resume-cta">Want my resume? <a href="assets/Hemanth_S_Resume.pdf" download="Hemanth_S_Resume.pdf"
+                target="_blank" rel="noopener noreferrer" class="link-download">Download Resume ↓</a></p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© <span id="copyright-year">2026</span> Hemanth S</span>
+        <span class="footer-dot">·</span>
+        <span>Built with ♥ in Mysuru</span>
+        <span class="footer-dot">·</span>
+        <span class="footer-status"><span class="status-dot"></span> Open to opportunities</span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ============================================================
+       BOOTSTRAP MODALS: DETAILED ARCHITECTURE & CONTRIBUTIONS
+       ============================================================ -->
+
+  <!-- Modal 1: ScoutIQ -->
+  <div class="modal fade" id="modal-scoutiq" tabindex="-1" aria-labelledby="modalScoutIQLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content ide-modal">
+        <div class="modal-header ide-modal-header">
+          <h5 class="modal-title ide-modal-title" id="modalScoutIQLabel">
+            <span>⚽</span> ScoutIQ — Football Data Analytics Platform
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ide-modal-body">
+          <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+            <span class="live-status-pill"><span class="status-pulse green"></span> Deployed on Vercel</span>
+            <span class="domain-tag">Domain: Sports Data Analytics & Ingestion</span>
+          </div>
+
+          <h6 class="modal-section-title"># Architecture & Data Flow</h6>
+          <p>ScoutIQ is a football data analytics platform that retrieves football datasets through the Sportmonks
+            Football API and supports automated, structured data ingestion. Raw JSON payloads from API endpoints are
+            validated, mapped into relational database entities (leagues, seasons, teams, fixtures, and player records),
+            and persisted in MySQL. Python scripts alongside Pandas and NumPy handle exploratory data processing and
+            reporting for performance analysis.</p>
+
+          <h6 class="modal-section-title"># Tech Stack</h6>
+          <table class="modal-tech-table">
+            <tbody>
+              <tr>
+                <td class="tech-role">Programming</td>
+                <td class="tech-items"><span class="tag">Python</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Data Processing</td>
+                <td class="tech-items"><span class="tag">Pandas</span> <span class="tag">NumPy</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Database</td>
+                <td class="tech-items"><span class="tag">MySQL</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Data Source</td>
+                <td class="tech-items"><span class="tag">Sportmonks Football API</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">API Integration</td>
+                <td class="tech-items"><span class="tag">REST API</span> <span class="tag">Requests</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Deployment & VCS</td>
+                <td class="tech-items"><span class="tag">Git</span> <span class="tag">GitHub</span> <span
+                    class="tag">Vercel</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h6 class="modal-section-title"># My Contributions</h6>
+          <ul class="contribution-list">
+            <li>Developed a modular Python API client with authentication, headers, and rate-limiting error handling.
+            </li>
+            <li>Implemented automated data ingestion pipelines for league, season, team, and fixture information.</li>
+            <li>Structured raw nested JSON payloads and built MySQL database connection utilities.</li>
+            <li>Utilized Pandas and NumPy for exploratory data inspection, table restructuring, and metrics analysis.
+            </li>
+            <li>Configured environment variable management to secure API credentials across environments.</li>
+          </ul>
+        </div>
+        <div class="modal-footer ide-modal-footer">
+          <a href="https://scout-iq-smoky.vercel.app/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-action-live">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+            </svg>
+            <span>Open Live App</span>
+          </a>
+          <a href="https://github.com/gowtham079/Scout-IQ.git" target="_blank" rel="noopener noreferrer"
+            class="btn btn-action-git">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>GitHub Repository</span>
+          </a>
+          <button type="button" class="btn btn-secondary ms-auto" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Skin Disease Detection -->
+  <div class="modal fade" id="modal-skin" tabindex="-1" aria-labelledby="modalSkinLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content ide-modal">
+        <div class="modal-header ide-modal-header">
+          <h5 class="modal-title ide-modal-title" id="modalSkinLabel">
+            <span>🩺</span> Skin Disease Detection — Deep Learning & Computer Vision
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ide-modal-body">
+          <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+            <span class="live-status-pill"><span class="status-pulse green"></span> Deployed on Render</span>
+            <span class="domain-tag">Domain: Computer Vision (Educational Prototype)</span>
+          </div>
+
+          <div class="prototype-pill mb-3">
+            <span class="pill-dot"></span> Educational prototype only; not intended for medical diagnosis.
+          </div>
+
+          <h6 class="modal-section-title"># Project Overview & Pipeline</h6>
+          <p>Skin Disease Detection is a deep learning web application that classifies skin lesion conditions into
+            categorical classifications. The pipeline consists of: (1) <strong>Image Preprocessing</strong>:
+            user-uploaded images are resized to the expected input dimensions (224×224), scaled, and normalized; (2)
+            <strong>Model Inference</strong>: a MobileNet architecture implemented in TensorFlow extracts visual
+            features and applies transfer learning weights; (3) <strong>Classification & Interface</strong>: predictions
+            are returned to the user via a Python Flask web interface displaying top predicted categories and confidence
+            scores.
+          </p>
+
+          <h6 class="modal-section-title"># Evaluation & Metrics</h6>
+          <p class="mb-3" style="font-size: 0.88rem; color: var(--text-muted);">Model performance was evaluated on a
+            held-out test split using <strong>Categorical Accuracy</strong> and loss curves during validation. Because
+            this is an academic and educational exploration of deep learning architectures, all outputs are strictly
+            exploratory.</p>
+
+          <h6 class="modal-section-title"># Tech Stack</h6>
+          <table class="modal-tech-table">
+            <tbody>
+              <tr>
+                <td class="tech-role">Programming</td>
+                <td class="tech-items"><span class="tag">Python</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Deep Learning</td>
+                <td class="tech-items"><span class="tag">TensorFlow</span> <span class="tag">MobileNet</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Domain</td>
+                <td class="tech-items"><span class="tag">Computer Vision</span> <span class="tag">Image
+                    Classification</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Web Interface</td>
+                <td class="tech-items"><span class="tag">Flask</span> <span class="tag">HTML/CSS</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Deployment & VCS</td>
+                <td class="tech-items"><span class="tag">Git</span> <span class="tag">GitHub</span> <span
+                    class="tag">Render</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h6 class="modal-section-title"># My Contributions</h6>
+          <ul class="contribution-list">
+            <li>Trained and fine-tuned MobileNet architecture in TensorFlow for multi-class image classification.</li>
+            <li>Built the image preprocessing pipeline (resizing, scaling, array normalization) prior to model
+              inference.</li>
+            <li>Integrated model inference endpoints within a Python Flask application.</li>
+            <li>Designed the user upload and prediction display view with clear disclaimer notices.</li>
+          </ul>
+        </div>
+        <div class="modal-footer ide-modal-footer">
+          <a href="https://skin-scan-rq98.onrender.com/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-action-live">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+            </svg>
+            <span>Open Live App</span>
+          </a>
+          <a href="https://github.com/gowtham079/skin-scan.git" target="_blank" rel="noopener noreferrer"
+            class="btn btn-action-git">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>GitHub Repository</span>
+          </a>
+          <button type="button" class="btn btn-secondary ms-auto" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Multi-Agent Disaster Management Simulator -->
+  <div class="modal fade" id="modal-disaster" tabindex="-1" aria-labelledby="modalDisasterLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content ide-modal">
+        <div class="modal-header ide-modal-header">
+          <h5 class="modal-title ide-modal-title" id="modalDisasterLabel">
+            <span>🚨</span> Multi-Agent Disaster Management Simulator (Disaster-OS)
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ide-modal-body">
+          <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+            <span class="live-status-pill"><span class="status-pulse green"></span> Deployed on Vercel</span>
+            <span class="domain-tag">Domain: Multi-Agent Systems & Simulation Engine</span>
+          </div>
+
+          <h6 class="modal-section-title"># System Architecture</h6>
+          <p>Disaster-OS simulates multi-agent coordination during environmental disaster incidents. Agents represent
+            detection units, incident responders, and resource dispatchers that exchange messages and track events in a
+            simulated environment. The system records incident states, logs interaction timelines, and provides API
+            endpoints implemented with FastAPI to serve simulation telemetry to the frontend.</p>
+
+          <h6 class="modal-section-title"># Evaluation Metrics</h6>
+          <p class="mb-3" style="font-size: 0.88rem; color: var(--text-muted);">The simulator benchmarks emergency
+            response effectiveness against simulated baselines using three key metrics: (1) <strong>Detection
+              Accuracy</strong>: the ratio of correctly recognized hazard events to total simulated occurrences; (2)
+            <strong>Detection Time</strong>: the latency in simulation ticks from incident generation to agent alert;
+            (3) <strong>False-Positive Rate</strong>: the frequency of false alerts generated under noisy environmental
+            conditions.
+          </p>
+
+          <h6 class="modal-section-title"># Tech Stack</h6>
+          <table class="modal-tech-table">
+            <tbody>
+              <tr>
+                <td class="tech-role">Backend & APIs</td>
+                <td class="tech-items"><span class="tag">Python</span> <span class="tag">FastAPI</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Data Storage</td>
+                <td class="tech-items"><span class="tag">SQLite</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Data Analysis</td>
+                <td class="tech-items"><span class="tag">Pandas</span> <span class="tag">NumPy</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Machine Learning</td>
+                <td class="tech-items"><span class="tag">Scikit-learn</span></td>
+              </tr>
+              <tr>
+                <td class="tech-role">Deployment & VCS</td>
+                <td class="tech-items"><span class="tag">Git</span> <span class="tag">GitHub</span> <span
+                    class="tag">Vercel</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h6 class="modal-section-title"># My Individual Contributions</h6>
+          <p class="mb-2" style="font-size: 0.86rem; color: var(--accent-green);"><em>Clarification: In this
+              collaborative simulation project, my individual focus was on state architecture, backend logging, and
+              telemetry metrics:</em></p>
+          <ul class="contribution-list">
+            <li>Engineered state management system to record agent execution status and state transitions.</li>
+            <li>Built structured event logging and incident data storage using SQLite.</li>
+            <li>Implemented the evaluation logic that calculates detection accuracy, detection time, and false-positive
+              rates.</li>
+            <li>Developed FastAPI REST endpoints to expose simulation state and metrics data to client dashboards.</li>
+          </ul>
+        </div>
+        <div class="modal-footer ide-modal-footer">
+          <a href="https://disasterosmultiagentproject.vercel.app/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-action-live">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+            </svg>
+            <span>Open Live App</span>
+          </a>
+          <a href="https://github.com/gowtham079/Disaster-OS.git" target="_blank" rel="noopener noreferrer"
+            class="btn btn-action-git">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>GitHub Repository</span>
+          </a>
+          <button type="button" class="btn btn-secondary ms-auto" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JavaScript Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
