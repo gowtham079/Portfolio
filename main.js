@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       const target = el.getAttribute('data-nav');
       setActive(target);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       if (el.getAttribute('href') === '#experience' || el.title?.toLowerCase().includes('experience')) {
         setTimeout(() => {
           const expEl = document.getElementById('experience');
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── Typing effect ────────────────────────────────────────────
   const typedEl = document.querySelector('.typed-text');
   if (typedEl) {
-    const words = ['Data Analyst.', 'MCA Graduate.', 'Data Enthusiast.'];
+    const words = ['Meaningful Insights.', 'Actionable Decisions.', 'Data-Driven Solutions.'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
