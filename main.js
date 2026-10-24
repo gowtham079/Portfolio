@@ -108,7 +108,30 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => requestAnimationFrame(tick), 600);
   }
 
-  // ── Contact form – mailto with validation & status ───────────
+  // ── Device Detection Helper ─────────────────────────────────
+  function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+      (window.matchMedia && window.matchMedia('(max-width: 768px)').matches && 'ontouchstart' in window);
+  }
+
+  // ── Email Button: Direct Mobile to Gmail App, Desktop to Modern Gmail Web ──
+  const emailContactLink = document.getElementById('email-contact-link') || document.querySelector('.email-link');
+  if (emailContactLink) {
+    if (isMobileDevice()) {
+      // Mobile: pure mailto scheme directly opens the native Gmail / Mail app
+      emailContactLink.setAttribute('href', 'mailto:hemanth.s.mca@gmail.com');
+      emailContactLink.removeAttribute('target');
+      emailContactLink.removeAttribute('rel');
+    } else {
+      // Desktop: opens modern Gmail web inbox with compose docked at bottom-right
+      const desktopGmailUrl = 'https://mail.google.com/mail/?extsrc=mailto&url=' + encodeURIComponent('mailto:hemanth.s.mca@gmail.com');
+      emailContactLink.setAttribute('href', desktopGmailUrl);
+      emailContactLink.setAttribute('target', '_blank');
+      emailContactLink.setAttribute('rel', 'noopener noreferrer');
+    }
+  }
+
+  // ── Contact form – mailto / Gmail redirection with validation & status ───────────
   const form = document.getElementById('contact-form');
   const statusDiv = document.getElementById('contact-status');
   if (form) {
@@ -151,24 +174,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const subject = encodeURIComponent('Portfolio message from ' + name);
       const body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
-      const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=hemanth.s.mca@gmail.com&su=' + subject + '&body=' + body;
       const mailtoUrl = 'mailto:hemanth.s.mca@gmail.com?subject=' + subject + '&body=' + body;
 
-      // Immediately open Gmail compose in a new tab during the user gesture
-      const mailWindow = window.open(gmailUrl, '_blank');
-
-      if (statusDiv) {
-        statusDiv.className = 'contact-status success';
-        statusDiv.innerHTML = 'Opening email compose for <strong>hemanth.s.mca@gmail.com</strong>...<br>' +
-          '<span style="font-size:0.86rem;margin-top:6px;display:inline-block;">If email didn\'t open automatically: ' +
-          '<a href="' + gmailUrl + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent-purple);text-decoration:underline;font-weight:600;">Open Gmail Web</a> or ' +
-          '<a href="' + mailtoUrl + '" style="color:var(--accent-green);text-decoration:underline;margin-left:6px;">Open Default Mail App</a></span>';
-        statusDiv.classList.remove('d-none');
-      }
-
-      // If popup blocker stopped window.open, fall back to mailto
-      if (!mailWindow || mailWindow.closed || typeof mailWindow.closed === 'undefined') {
+      if (isMobileDevice()) {
+        // MOBILE: Direct to native Gmail / Mail App (bypasses Chrome web view)
         window.location.href = mailtoUrl;
+
+        if (statusDiv) {
+          statusDiv.className = 'contact-status success';
+          statusDiv.innerHTML = 'Opening your Gmail / Mail app...<br>' +
+            '<span style="font-size:0.86rem;margin-top:6px;display:inline-block;">If the app didn\'t open automatically: ' +
+            '<a href="' + mailtoUrl + '" style="color:var(--accent);text-decoration:underline;font-weight:600;">Tap here to open Gmail app</a></span>';
+          statusDiv.classList.remove('d-none');
+        }
+      } else {
+        // DESKTOP: Open modern Gmail web interface with compose docked in inbox
+        const desktopGmailUrl = 'https://mail.google.com/mail/?extsrc=mailto&url=' + encodeURIComponent(mailtoUrl);
+        const mailWindow = window.open(desktopGmailUrl, '_blank');
+
+        if (statusDiv) {
+          statusDiv.className = 'contact-status success';
+          statusDiv.innerHTML = 'Opening Gmail compose for <strong>hemanth.s.mca@gmail.com</strong>...<br>' +
+            '<span style="font-size:0.86rem;margin-top:6px;display:inline-block;">If email didn\'t open automatically: ' +
+            '<a href="' + desktopGmailUrl + '" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;font-weight:600;">Open Gmail Web</a> or ' +
+            '<a href="' + mailtoUrl + '" style="color:var(--accent-green);text-decoration:underline;margin-left:6px;">Open Default Mail App</a></span>';
+          statusDiv.classList.remove('d-none');
+        }
+
+        // If popup blocker stopped window.open, fall back to mailto
+        if (!mailWindow || mailWindow.closed || typeof mailWindow.closed === 'undefined') {
+          window.location.href = mailtoUrl;
+        }
       }
 
       setTimeout(() => {
